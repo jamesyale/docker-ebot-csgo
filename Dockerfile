@@ -12,4 +12,4 @@ RUN mkdir ${homedir} && curl -L https://github.com/deStrO/eBot-CSGO/archive/thre
 
 RUN npm install socket.io formidable archiver
 
-CMD ["/usr/bin/php ${homedir}/ebot-csgo/bootstrap.php"]
+CMD ["sh", "-c", "/usr/bin/php ${homedir}/ebot-csgo/bootstrap.php"]
