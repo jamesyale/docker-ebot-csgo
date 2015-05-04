@@ -8,7 +8,7 @@ RUN apt-get -y install nodejs npm curl git php5-cli mysql-server phpmyadmin unzi
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin
 
-RUN mkdir ${homedir} && curl -L https://github.com/deStrO/eBot-CSGO/archive/threads.zip >> ${homedir}/threads.zip && unzip -d ${homedir} ${homedir}/threads.zip && ln -s ${homedir}/eBot-CSGO-threads ${homedir}/ebot-csgo && cd ${homedir}/ebot-csgo && /usr/bin/php /usr/bin/composer.phar install
+RUN mkdir ${homedir} && curl -L https://github.com/deStrO/eBot-CSGO/archive/master.zip >> ${homedir}/master.zip && unzip -d ${homedir} ${homedir}/master.zip && ln -s ${homedir}/eBot-CSGO-master ${homedir}/ebot-csgo && cd ${homedir}/ebot-csgo && /usr/bin/php /usr/bin/composer.phar install
 
 RUN npm install socket.io formidable archiver
 
