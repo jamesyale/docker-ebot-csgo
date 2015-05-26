@@ -1,14 +1,20 @@
 ebot: 
   image: jamesyale/docker-ebot-csgo
   links: 
-    - mysql:mysql
+    - "mysql:mysql"
   ports: 
     - "8080:80"
     - "12360:12360"
+ebotweb: 
+  image: jamesyale/docker-ebot-csgo-web
+  links: 
+    - "mysql:mysql"
+  ports: 
+    - "8081:80"
 mysql: 
   environment: 
     - MYSQL_DATABASE=ebotv3
     - MYSQL_USER=ebotv3
     - MYSQL_PASSWORD=ebotv3
+    - MYSQL_ROOT_PASSWORD=ebotv3
   image: mysql
-
