@@ -9,6 +9,7 @@ ebotweb:
   image: jamesyale/docker-ebot-csgo-web
   links: 
     - "mysql:mysql"
+    - "ebot:ebot"
   ports: 
     - "8081:80"
 mysql: 
