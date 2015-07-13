@@ -5,6 +5,8 @@ ebot:
     - "12360:12360"
   privileged: true
   net: "host"
+  links:
+    - "mysql:mysql"
 ebotweb: 
   image: jamesyale/docker-ebot-csgo-web
   links: 
