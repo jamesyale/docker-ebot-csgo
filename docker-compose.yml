@@ -1,9 +1,7 @@
 ebot: 
   image: jamesyale/docker-ebot-csgo
   ports: 
-    - "8080:80"
-    - "12360:12360"
-  privileged: true
+    - "172.17.42.1:12360:12361"
   net: "host"
   links:
     - "mysql:mysql"

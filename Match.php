@@ -626,9 +626,9 @@ class Match implements Taskable {
 
             // Changing map
             $this->addLog("Changing map to " . $this->currentMap->getMapName());
-            if (\eBot\Config\Config::getInstance()->getWorkshop() && \eBot\Config\Config::getInstance()->getWorkshopByMap($this->currentMap->getMapName()))
-                $this->rcon->send("changelevel workshop/" . \eBot\Config\Config::getInstance()->getWorkshopByMap($this->currentMap->getMapName()) . "/" . $this->currentMap->getMapName());
-            else
+//            if (\eBot\Config\Config::getInstance()->getWorkshop() && \eBot\Config\Config::getInstance()->getWorkshopByMap($this->currentMap->getMapName()))
+//                $this->rcon->send("changelevel workshop/" . \eBot\Config\Config::getInstance()->getWorkshopByMap($this->currentMap->getMapName()) . "/" . $this->currentMap->getMapName());
+//            else
                 $this->rcon->send("changelevel " . $this->currentMap->getMapName());
 
             if ($this->config_kniferound) {
@@ -928,7 +928,7 @@ class Match implements Taskable {
 			try {
 				$this->rcon = new Rcon($ip[0], $ip[1], $this->rconPassword);
 				$this->rcon->send("echo eBot;");
-				// $this->rcon->send("changelevel ".$this->currentMap->getMapName());
+				$this->rcon->send("changelevel ".$this->currentMap->getMapName());
 			} catch (\Exception $ex) {
 				Logger::error("Reinit rcon failed - " . $ex->getMessage());
 				TaskManager::getInstance()->addTask(new Task($this, self::REINIT_RCON, microtime(true) + 1));
