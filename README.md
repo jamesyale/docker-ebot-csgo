@@ -10,6 +10,6 @@ Run
 
 Quick start
 -----------
-* Connect to the running eBot web interface @ `http://$hostip:8081/ebot`
+* Connect to the running eBot web interface @ `http://$hostip:8081/ebot-csgo`
 
 * To admin goto `admin.php` - u:admin p:password
