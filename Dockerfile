@@ -1,4 +1,4 @@
-FROM ubuntu:14.10
+FROM ubuntu:14.04
 
 ENV homedir /home/ebotv3
 
