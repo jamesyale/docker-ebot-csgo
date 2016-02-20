@@ -19,4 +19,5 @@ mysql:
     - MYSQL_USER=ebotv3
     - MYSQL_PASSWORD=ebotv3
     - MYSQL_ROOT_PASSWORD=ebotv3
+    - MYSQL_PORT=3307
   image: mysql

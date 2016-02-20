@@ -14,6 +14,8 @@ RUN mkdir ${homedir} && curl -L https://github.com/deStrO/eBot-CSGO/archive/v3.1
 
 RUN sed -i 's/MYSQL_IP = "127.0.0.1"/MYSQL_IP = "172.17.42.1"/g' /home/ebotv3/ebot-csgo/config/config.ini
 
+RUN sed -i 's/MYSQL_PORT = "3306"/MYSQL_PORT = "3307"/g' /home/ebotv3/ebot-csgo/config/config.ini
+
 RUN sed -i 's/127.0.0.1/172.17.42.1/g' /home/ebotv3/ebot-csgo/config/config.ini
 
 RUN npm install socket.io formidable archiver
