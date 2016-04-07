@@ -1,19 +1,21 @@
 ebot: 
   image: jamesyale/docker-ebot-csgo
-  ports: 
-    - "172.17.42.1:12360:12361"
-  net: "host"
+  expose: 
+    - "12360:12360"
+    - "12361:12361"
   links:
     - "mysql:mysql"
 ebotweb: 
   image: jamesyale/docker-ebot-csgo-web
   links: 
     - "mysql:mysql"
+    - "ebot:ebot"
   ports: 
     - "8081:80"
 mysql: 
-  ports: 
-    - "3306:3306"
+  expose:
+    - "3306"
+    - "3307"
   environment: 
     - MYSQL_DATABASE=ebotv3
     - MYSQL_USER=ebotv3
