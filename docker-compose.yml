@@ -13,8 +13,6 @@ ebotweb:
   ports: 
     - "8081:80"
 mysql: 
-  ports: 
-    - "3306:3306"
   environment: 
     - MYSQL_DATABASE=ebotv3
     - MYSQL_USER=ebotv3
