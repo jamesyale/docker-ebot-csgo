@@ -2,7 +2,7 @@ version: '2'
 
 services:
   ebot: 
-    image: jamesyale/docker-ebot-csgo
+    image: jamesyale/docker-ebot-csgo:testing
     ports: 
       - "12360:12360"
       - "12361:12361"
@@ -13,7 +13,7 @@ services:
     networks:
       - anet
   ebotweb: 
-    image: jamesyale/docker-ebot-csgo-web
+    image: jamesyale/docker-ebot-csgo-web:testing
     links: 
       - "mysql:mysql"
     ports: 
