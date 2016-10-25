@@ -38,4 +38,4 @@ RUN npm install socket.io formidable archiver
 #COPY Match.php /home/ebotv3/eBot-CSGO-master/src/eBot/Match/Match.php
 COPY wait-for-it.sh /tmp/
 
-CMD ["sh", "-c", "bash /tmp/wait-for-it.sh -h mysql -p 3306 -t 0 ; /usr/local/bin/php ${homedir}/ebot-csgo/bootstrap.php"]
+CMD ["sh", "-c", "bash /tmp/wait-for-it.sh -h ebotweb -p 80 -t 0 ; echo 'Waiting for tables to be created' ; sleep 30 ; /usr/local/bin/php ${homedir}/ebot-csgo/bootstrap.php"]
