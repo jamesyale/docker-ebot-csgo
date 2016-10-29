@@ -29,7 +29,7 @@ RUN cp ${homedir}/ebot-csgo/config/config.ini.smp ${homedir}/ebot-csgo/config/co
 
 RUN sed -i 's/MYSQL_IP = "127.0.0.1"/MYSQL_IP = "mysql"/g' /home/ebotv3/ebot-csgo/config/config.ini
 
-RUN sed -i 's/BOT_IP = "127.0.0.1"/BOT_IP = "ebot"/g' /home/ebotv3/ebot-csgo/config/config.ini
+RUN sed -i 's/BOT_IP = "127.0.0.1"/BOT_IP = "0.0.0.0"/g' /home/ebotv3/ebot-csgo/config/config.ini
 
 RUN sed -i 's/EXTERNAL_LOG_IP = ""/EXTERNAL_LOG_IP = "ebot"/g' /home/ebotv3/ebot-csgo/config/config.ini
 

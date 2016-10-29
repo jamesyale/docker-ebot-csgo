@@ -6,6 +6,8 @@ services:
     ports: 
       - "12360:12360"
       - "12361:12361"
+      - "12360:12360/udp"
+      - "12361:12361/udp"
     links:
       - "mysql:mysql"
     depends_on:
