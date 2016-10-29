@@ -41,6 +41,6 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh ; chmod +x /tmp/wait-for-it.sh
 
-CMD ["sh", "-c", "bash /tmp/wait-for-it.sh -h ebotweb -p 80 -t 0 ; echo 'Waiting for tables to be created' ; sleep 30 ; /usr/local/bin/php ${homedir}/ebot-csgo/bootstrap.php"]
+#CMD ["sh", "-c", "bash /tmp/wait-for-it.sh -h ebotweb -p 80 -t 0 ; echo 'Waiting for tables to be created' ; sleep 30 ; /usr/local/bin/php ${homedir}/ebot-csgo/bootstrap.php"]
 
-#ENTRYPOINT /entrypoint.sh
+ENTRYPOINT /entrypoint.sh
