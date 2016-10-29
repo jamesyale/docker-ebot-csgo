@@ -1,22 +1,36 @@
-ebot: 
-  image: jamesyale/docker-ebot-csgo
-  ports: 
-    - "172.17.42.1:12360:12361"
-  net: "host"
-  links:
-    - "mysql:mysql"
-ebotweb: 
-  image: jamesyale/docker-ebot-csgo-web
-  links: 
-    - "mysql:mysql"
-  ports: 
-    - "8081:80"
-mysql: 
-  ports: 
-    - "3306:3306"
-  environment: 
-    - MYSQL_DATABASE=ebotv3
-    - MYSQL_USER=ebotv3
-    - MYSQL_PASSWORD=ebotv3
-    - MYSQL_ROOT_PASSWORD=ebotv3
-  image: mysql
+version: '2'
+
+services:
+  ebot: 
+    image: jamesyale/docker-ebot-csgo:testing
+    ports: 
+      - "12360:12360"
+      - "12361:12361"
+      - "12360:12360/udp"
+      - "12361:12361/udp"
+    links:
+      - "mysql:mysql"
+    depends_on:
+      - ebotweb
+    networks:
+      - anet
+  ebotweb: 
+    image: jamesyale/docker-ebot-csgo-web:testing
+    links: 
+      - "mysql:mysql"
+    ports: 
+      - "8081:80"
+    networks:
+      - anet
+  mysql: 
+    environment: 
+      - MYSQL_DATABASE=ebotv3
+      - MYSQL_USER=ebotv3
+      - MYSQL_PASSWORD=ebotv3
+      - MYSQL_ROOT_PASSWORD=ebotv3
+    image: mysql
+    networks:
+      - anet
+networks:
+  anet:
+    driver: bridge
